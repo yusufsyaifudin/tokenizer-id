@@ -1,7 +1,0 @@
-language: java
-jdk:
-  - oraclejdk8
-  - oraclejdk7
-
-# command to run tests
-# script: mvn test
