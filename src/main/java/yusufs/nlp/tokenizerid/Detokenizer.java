@@ -34,7 +34,7 @@ public class Detokenizer {
 	 */
 	public String detokenize(ArrayList<String> tokens) {
         //Define list of punctuation characters that should NOT have spaces before or after 
-        List<String> noSpaceBefore = new LinkedList<String>(Arrays.asList(",", ".",";", ":", ")", "}", "]"));
+        List<String> noSpaceBefore = new LinkedList<String>(Arrays.asList(",", ".",";", ":", ")", "}", "]", "!", "?"));
         List<String> noSpaceAfter = new LinkedList<String>(Arrays.asList("(", "[","{", "\"",""));
 
         StringBuilder sentence = new StringBuilder();
