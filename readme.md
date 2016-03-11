@@ -1,5 +1,7 @@
 # Tokenizer for Bahasa Indonesia
 
+[![Build Status](https://travis-ci.org/yusufsyaifudin/tokenizer-id.svg?branch=master)](https://travis-ci.org/yusufsyaifudin/tokenizer-id)
+
 Kelas Tokenizer akan memecah sekumpulan teks menjadi kalimat dan sekumpulan kalimat menjadi _token_. Kelas Tokenizer ini merupakan kelas yang saya buat sendiri untuk keperluan skripsi saya.
 
 ## Instalasi
