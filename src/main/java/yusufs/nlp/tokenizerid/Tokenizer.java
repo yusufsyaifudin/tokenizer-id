@@ -1,8 +1,10 @@
-package yusufs.skripsi;
-//#Tokenizer
-//Merupakan kode untuk memecah teks kedalam sekumpulan kalimat dan/atau kata.
+// #Tokenizer
+// Merupakan kode untuk memecah teks kedalam sekumpulan kalimat dan/atau kata.
 //
-//Ditulis mulai Sabtu, 2 Mei 2015 8:50 PM
+// Ditulis mulai Sabtu, 2 Mei 2015 8:50 PM
+
+package yusufs.nlp.tokenizerid;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -10,11 +12,17 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
+
+import yusufs.generator.randstring.RandomStringGenerator;
+
 /**
-*
-* @author Yusuf Syaifudin
-*/
+ *
+ * @author Yusuf Syaifudin
+ */
 public class Tokenizer {
+	
+	final static Logger logger = Logger.getLogger(Tokenizer.class);
 	
 	// ## extractSentence()
 	// Memecah teks menjadi array kalimat-kalimat yang menyusun teks 
@@ -30,6 +38,7 @@ public class Tokenizer {
 	 */
 	public ArrayList<String> extractSentence(String text) {
 		ArrayList<String> result = new ArrayList<>();
+		logger.info("Memulai ekstraksi kalimat.");
 		// Pattern regular expression untuk mengekstrak kalimat.
 		// ```(?!\Z)[\n\r]*((?:[^."]*"[^"]*")+[^."]*(?:\.|\Z))|([^.!?\s][^.!?]*(?:[.!?](?!['"]?\s|$)[^.!?]*)*[.!?]?['"]?(?=\s|$))```
 		// Sumber: http://stackoverflow.com/questions/5553410/regular-expression-match-a-sentence 
@@ -77,6 +86,8 @@ public class Tokenizer {
 			String unMap = unreplaceBoundary(r, map);
 			finalResult.add(unMap);
 		}
+		
+		logger.info("Ekstraksi kalimat selesai.");
 		return finalResult;
 	}
 	
@@ -417,7 +428,7 @@ public class Tokenizer {
 		// Sekarang lalukan Grouping. Buat variabel sementara dahulu.
 		String punctGroup = "";
 		
-
+ 
 		// Lakukan perulangan dari nol sampai kurang dari panjang string (punctuation).
 		for(int i=0; i<punct.length(); i++) {
 			
@@ -443,7 +454,7 @@ public class Tokenizer {
 					punctGroup += c;
 				}
 			}
-
+ 
 		}
 		
 		// Pada akhirnya tambahkan ke hasil akhir untuk memastikan bahwa append string yang terakhir sudah masuk ArrayList.
@@ -531,7 +542,7 @@ public class Tokenizer {
 					punctGroup += c;
 				}
 			}
-
+ 
 		}
 		
 		// Pada akhirnya tambahkan ke hasil akhir untuk memastikan 
@@ -594,4 +605,3 @@ public class Tokenizer {
 		}
 	}
 }
-

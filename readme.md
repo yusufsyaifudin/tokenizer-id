@@ -4,14 +4,14 @@ Kelas Tokenizer akan memecah sekumpulan teks menjadi kalimat dan sekumpulan kali
 
 ## Instalasi
 
-Untuk menginstall, tambahkan kode berikut pada berkas `pom.xml`:
+Sebelumnya pastikan versi java runtime Anda minimal versi 1.7 atau lebih baik 1.8 keatas. Untuk menginstall, tambahkan kode berikut pada berkas `pom.xml`:
 
 ```
 <repositories>
     <repository>
       <id>yusufsyaifudin</id>
       <name>tokenizer-id</name>
-      <url>https://github.com/yusufsyaifudin/tokenizer-id/raw/master/</url>
+      <url>https://github.com/yusufsyaifudin/tokenizer-id/raw/1.0.0/</url>
     </repository>
 </repositories> 
 ```
@@ -21,8 +21,8 @@ dan kode berikut pada _dependency_ `pom.xml`
 ```
 <dependencies>
     <dependency>
-      <groupId>yusuf.skripsi</groupId>
-      <artifactId>tokenizerId</artifactId>
+      <groupId>yusuf.nlp</groupId>
+      <artifactId>tokenizerid</artifactId>
       <version>1.0.0</version>
       <scope>compile</scope>
     </dependency>
