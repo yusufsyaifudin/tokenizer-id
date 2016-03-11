@@ -21,7 +21,7 @@ dan kode berikut pada _dependency_ `pom.xml`
 ```
 <dependencies>
     <dependency>
-      <groupId>yusuf.nlp</groupId>
+      <groupId>yusufs.nlp</groupId>
       <artifactId>tokenizerid</artifactId>
       <version>1.0.0</version>
       <scope>compile</scope>
