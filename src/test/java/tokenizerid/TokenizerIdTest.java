@@ -54,4 +54,51 @@ public class TokenizerIdTest {
 		Assert.assertEquals(sentence, detoksentence);
 	}
 
+	@Test
+	public void testForeignWordWithDash() {
+		String sentence = "Tetapi tidak ada google (kata kerja), laptop, online, blogosphere, cyberspace, e-mail. " +
+				"Belum lagi e-paper, e-book, e-dictionary, e-library, e-government, e-crime.";
+
+		ArrayList<String> expectedTokens = new ArrayList<>();
+		expectedTokens.add("Tetapi");
+		expectedTokens.add("tidak");
+		expectedTokens.add("ada");
+		expectedTokens.add("google");
+		expectedTokens.add("(");
+		expectedTokens.add("kata");
+		expectedTokens.add("kerja");
+		expectedTokens.add(")");
+		expectedTokens.add(",");
+		expectedTokens.add("laptop");
+		expectedTokens.add(",");
+		expectedTokens.add("online");
+		expectedTokens.add(",");
+		expectedTokens.add("blogosphere");
+		expectedTokens.add(",");
+		expectedTokens.add("cyberspace");
+		expectedTokens.add(",");
+		expectedTokens.add("e-mail");
+		expectedTokens.add(".");
+		expectedTokens.add("Belum");
+		expectedTokens.add("lagi");
+		expectedTokens.add("e-paper");
+		expectedTokens.add(",");
+		expectedTokens.add("e-book");
+		expectedTokens.add(",");
+		expectedTokens.add("e-dictionary");
+		expectedTokens.add(",");
+		expectedTokens.add("e-library");
+		expectedTokens.add(",");
+		expectedTokens.add("e-government");
+		expectedTokens.add(",");
+		expectedTokens.add("e-crime");
+		expectedTokens.add(".");
+
+		ArrayList<String> tokens = tokenizer.tokenize(sentence, true);
+		Assert.assertEquals(expectedTokens, tokens);
+
+		String detoksentence = detokenizer.detokenize(tokens);
+		Assert.assertEquals(sentence, detoksentence);
+	}
+
 }
